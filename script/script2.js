@@ -83,7 +83,7 @@ function updatePrice() {
 }
 
 
-if (window.location.href === 'http://127.0.0.1:5500/detail.html') {
+if (window.location.href === 'https://gokhanbyk.github.io/case-music/elektroGitarlar.html') {
     function btnDetail() {
         btnPrice = document.querySelector('.price-btn')
         btnPrice.setAttribute('id', enstruments[0]['product-id'])
@@ -169,7 +169,7 @@ if (closeShopping) {
 console.log(enstruments)
 let listCards = []
 
-if(window.location.href == 'http://127.0.0.1:5500/index.html' || window.location.href == 'http://127.0.0.1:5500/categories.html') {
+if(window.location.href == 'https://gokhanbyk.github.io/case-music/' || window.location.href == 'https://gokhanbyk.github.io/case-music/categories.html') {
 function createProduct() {
     const productDiv = document.getElementById('products')
     enstruments.forEach((value, key) => {
