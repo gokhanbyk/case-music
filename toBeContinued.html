@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Be Continued | Case</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(rgb(250, 241, 228), rgb(206, 222, 189));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .worker {
+            margin: auto;
+            height: 192px; 
+            width: calc(384px / 4 * 2); 
+            background-image: url(./img/Attack_1.png);
+            background-position: center;
+            background-size: cover;
+            animation: work 1s steps(4) infinite;
+
+        }
+        @keyframes work {
+            from {
+                background-position: 0;
+                transform: scale(1.2);
+            }
+            to {
+                background-position: calc(384px * 2);
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oops! Hala daha yapım aşamasındayız...</h1>
+        <div class="worker"></div>
+        <h2>Lütfen ustayı çalışırken rahatsız etmeyiniz.</h2>
+        <a href="index.html">Anasayfa'ya dön</a>
+
+    </div>
+</body>
+</html>
