@@ -83,7 +83,7 @@ function updatePrice() {
 }
 
 
-if (window.location.href === 'https://gokhanbyk.github.io/case-music/elektroGitarlar.html') {
+if (window.location.href === 'http://127.0.0.1:5500/detail.html') {
     function btnDetail() {
         btnPrice = document.querySelector('.price-btn')
         btnPrice.setAttribute('id', enstruments[0]['product-id'])
@@ -169,7 +169,7 @@ if (closeShopping) {
 console.log(enstruments)
 let listCards = []
 
-if(window.location.href == 'https://gokhanbyk.github.io/case-music/' || window.location.href == 'https://gokhanbyk.github.io/case-music/categories.html') {
+
 function createProduct() {
     const productDiv = document.getElementById('products')
     enstruments.forEach((value, key) => {
@@ -237,80 +237,6 @@ function createProduct() {
 
 }
 createProduct()
-}
-
-
-
-if(window.location.href === 'http://127.0.0.1:5500/elektroGitarlar.html') {
-    function createSpecificProduct() {
-        const productGitarDiv = document.getElementById('products-gitar')
-        const guitars = enstruments.filter(item => item.category == 'gitar')
-        console.log(guitars)
-        guitars.forEach((value) => {
-            const div = document.createElement('div')
-            div.classList.add('col-lg-3', 'col-sm-6', 'col-12', 'px-sm-2', 'px-0', 'mb-3')
-    
-            const card = document.createElement('div')
-            card.classList.add('card')
-    
-            const cardInfo = document.createElement('div')
-            cardInfo.classList.add('card-info')
-    
-            const cardTitle = document.createElement('div')
-            cardTitle.classList.add('card-title', 'text-center')
-            cardTitle.textContent = value.title
-    
-            const cardAvatar = document.createElement('div')
-            cardAvatar.classList.add('card-avatar')
-    
-            const imgA = document.createElement('a')
-            imgA.href = "detail.html"
-    
-            const img = document.createElement('img')
-            img.src = value.image
-            img.alt = ''
-    
-            const cardSocial = document.createElement('div')
-            cardSocial.classList.add('card-social', 'mt-4',)
-            cardSocial.textContent = (value.price * value.quantity) + ' TL'
-    
-            const button = document.createElement('button')
-            button.classList.add('card-social', 'btn', 'btn-warning', 'mb-5')
-            button.setAttribute('id', value['product-id'])
-            button.textContent = 'Sepete Ekle'
-    
-            button.addEventListener('click', (e) => {
-                const productId = e.target.getAttribute('id')
-                const product = enstruments.find(item => item['product-id'] == productId)
-    
-                if (product) {
-                    addToCart(productId)
-    
-                    console.log('Sepete Ekle:', product)
-                } else {
-                    console.log('Ürün bulunamadı: Product ID', productId)
-                }
-    
-                addedCount.textContent = listCards.length
-            })
-    
-            // İndex Page
-            card.appendChild(cardInfo)
-            cardInfo.appendChild(cardTitle)
-            cardInfo.appendChild(cardAvatar)
-            imgA.appendChild(img)
-            cardAvatar.appendChild(imgA)
-            cardInfo.appendChild(cardSocial)
-            card.appendChild(button)
-            div.appendChild(card)
-    
-            // İndex Page
-            productGitarDiv.append(div)
-        })
-    
-    }
-    createSpecificProduct()
-}
 
 function addToCart(productId) {
     const product = enstruments.find(item => item['product-id'] == productId)
